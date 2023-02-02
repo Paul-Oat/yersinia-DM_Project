@@ -175,7 +175,8 @@ term_add_node(struct term_node **node, int8_t type, int sock, pthread_t tid)
 {
    int8_t i;
    struct term_vty *vty;
-   struct term_console *console;
+   //todo fIX THIS OR DELETE - Paul 
+   //struct term_console *console;
    struct term_tty *tty;
    struct term_node *new = term_type[type].list;
    
@@ -209,7 +210,8 @@ term_add_node(struct term_node **node, int8_t type, int sock, pthread_t tid)
                     thread_error("term_add_node console calloc()",errno);
                     return -1;
                  }                       
-                 console = new->specific;
+             //todo FIX RESIZE ? - paul oates 
+                 //console = new->specific;
 #if defined (TIOCGWINSZ) && defined (HAVE_NCURSES_RESIZETERM)                       
                  console->need_resize = 0;
 #endif
